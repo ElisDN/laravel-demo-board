@@ -1,5 +1,6 @@
 <?php
 
+use App\Entity\User;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
 
 Breadcrumbs::register('home', function (Crumbs $crumbs) {
@@ -34,4 +35,24 @@ Breadcrumbs::register('cabinet', function (Crumbs $crumbs) {
 Breadcrumbs::register('admin.home', function (Crumbs $crumbs) {
     $crumbs->parent('home');
     $crumbs->push('Admin', route('admin.home'));
+});
+
+Breadcrumbs::register('admin.users.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push('Users', route('admin.users.index'));
+});
+
+Breadcrumbs::register('admin.users.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.users.index');
+    $crumbs->push('Create', route('admin.users.create'));
+});
+
+Breadcrumbs::register('admin.users.show', function (Crumbs $crumbs, User $user) {
+    $crumbs->parent('admin.users.index');
+    $crumbs->push($user->name, route('admin.users.show', $user));
+});
+
+Breadcrumbs::register('admin.users.edit', function (Crumbs $crumbs, User $user) {
+    $crumbs->parent('admin.users.show', $user);
+    $crumbs->push('Edit', route('admin.users.edit', $user));
 });
