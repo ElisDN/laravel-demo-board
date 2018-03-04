@@ -2,7 +2,7 @@
 
 namespace App\Mail\Auth;
 
-use App\User;
+use App\Entity\User;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
