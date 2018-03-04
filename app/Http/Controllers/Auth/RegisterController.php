@@ -8,7 +8,6 @@ use App\Entity\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -24,13 +23,11 @@ class RegisterController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $user = User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => bcrypt($request['password']),
-            'verify_token' => Str::random(),
-            'status' => User::STATUS_WAIT,
-        ]);
+        $user = User::register(
+            $request['name'],
+            $request['email'],
+            $request['password']
+        );
 
         Mail::to($user->email)->send(new VerifyMail($user));
         event(new Registered($user));
@@ -46,16 +43,11 @@ class RegisterController extends Controller
                 ->with('error', 'Sorry your link cannot be identified.');
         }
 
-        if ($user->status !== User::STATUS_WAIT) {
-            return redirect()->route('login')
-                ->with('error', 'Your email is already verified.');
+        try {
+            $user->verify();
+            return redirect()->route('login')->with('success', 'Your e-mail is verified. You can now login.');
+        } catch (\DomainException $e) {
+            return redirect()->route('login')->with('error', $e->getMessage());
         }
-
-        $user->status = User::STATUS_ACTIVE;
-        $user->verify_token = null;
-        $user->save();
-
-        return redirect()->route('login')
-            ->with('success', 'Your e-mail is verified. You can now login.');
     }
 }
