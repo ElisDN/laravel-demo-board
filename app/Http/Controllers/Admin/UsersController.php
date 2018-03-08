@@ -79,17 +79,12 @@ class UsersController extends Controller
 
     public function edit(User $user)
     {
-        $statuses = [
-            User::STATUS_WAIT => 'Waiting',
-            User::STATUS_ACTIVE => 'Active',
-        ];
-
         $roles = [
             User::ROLE_USER => 'User',
             User::ROLE_ADMIN => 'Admin',
         ];
 
-        return view('admin.users.edit', compact('user', 'statuses', 'roles'));
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     public function update(UpdateRequest $request, User $user)
