@@ -37,11 +37,16 @@ Route::group(
         Route::resource('regions', 'RegionController');
 
         Route::group(['prefix' => 'adverts', 'as' => 'adverts.', 'namespace' => 'Adverts'], function () {
+
             Route::resource('categories', 'CategoryController');
-            Route::post('/categories/{category}/first', 'CategoryController@first')->name('categories.first');
-            Route::post('/categories/{category}/up', 'CategoryController@up')->name('categories.up');
-            Route::post('/categories/{category}/down', 'CategoryController@down')->name('categories.down');
-            Route::post('/categories/{category}/last', 'CategoryController@last')->name('categories.last');
+
+            Route::group(['prefix' => 'categories/{category}', 'as' => 'categories.'], function () {
+                Route::post('/first', 'CategoryController@first')->name('first');
+                Route::post('/up', 'CategoryController@up')->name('up');
+                Route::post('/down', 'CategoryController@down')->name('down');
+                Route::post('/last', 'CategoryController@last')->name('last');
+                Route::resource('attributes', 'AttributeController')->except('index');
+            });
         });
     }
 );
