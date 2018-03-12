@@ -170,4 +170,9 @@ class User extends Authenticatable
     {
         return (bool)$this->phone_auth;
     }
+
+    public function hasFilledProfile(): bool
+    {
+        return !empty($this->name) && !empty($this->last_name) && $this->isPhoneVerified();
+    }
 }
