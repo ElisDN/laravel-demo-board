@@ -29,6 +29,9 @@ Route::group(
     ],
     function () {
         Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/profile', 'ProfileController@index')->name('profile.home');
+        Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+        Route::put('/profile/update', 'ProfileController@update')->name('profile.update');
     }
 );
 
