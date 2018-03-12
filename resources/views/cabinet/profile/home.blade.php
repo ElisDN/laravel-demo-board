@@ -18,6 +18,20 @@
         <tr>
             <th>Email</th><td>{{ $user->email }}</td>
         </tr>
+        <tr>
+            <th>Phone</th><td>
+                @if ($user->phone)
+                    {{ $user->phone }}
+                    @if (!$user->isPhoneVerified())
+                        <i>(is not verified)</i><br />
+                        <form method="POST" action="{{ route('cabinet.profile.phone') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-success">Verify</button>
+                        </form>
+                    @endif
+                @endif
+            </td>
+        </tr>
         </tbody>
     </table>
 @endsection

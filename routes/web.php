@@ -29,9 +29,15 @@ Route::group(
     ],
     function () {
         Route::get('/', 'HomeController@index')->name('home');
-        Route::get('/profile', 'ProfileController@index')->name('profile.home');
-        Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
-        Route::put('/profile/update', 'ProfileController@update')->name('profile.update');
+
+        Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
+            Route::get('/', 'ProfileController@index')->name('home');
+            Route::get('/edit', 'ProfileController@edit')->name('edit');
+            Route::put('/update', 'ProfileController@update')->name('update');
+            Route::post('/phone', 'PhoneController@request');
+            Route::get('/phone', 'PhoneController@form')->name('phone');
+            Route::put('/phone', 'PhoneController@verify')->name('phone.verify');
+        });
     }
 );
 
