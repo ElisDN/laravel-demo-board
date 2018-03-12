@@ -15,6 +15,11 @@ Breadcrumbs::register('login', function (Crumbs $crumbs) {
     $crumbs->push('Login', route('login'));
 });
 
+Breadcrumbs::register('login.phone', function (Crumbs $crumbs) {
+    $crumbs->parent('home');
+    $crumbs->push('Login', route('login.phone'));
+});
+
 Breadcrumbs::register('register', function (Crumbs $crumbs) {
     $crumbs->parent('home');
     $crumbs->push('Register', route('register'));
