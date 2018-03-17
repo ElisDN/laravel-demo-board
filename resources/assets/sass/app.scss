@@ -24,3 +24,15 @@ body {
 .table th, .table td {
   padding: 0.55rem 0.75rem;
 }
+
+.adverts-list {
+  .advert {
+    margin: 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}

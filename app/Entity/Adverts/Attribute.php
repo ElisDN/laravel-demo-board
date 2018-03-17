@@ -54,6 +54,11 @@ class Attribute extends Model
         return $this->type === self::TYPE_FLOAT;
     }
 
+    public function isNumber(): bool
+    {
+        return $this->isInteger() || $this->isFloat();
+    }
+
     public function isSelect(): bool
     {
         return \count($this->variants) > 0;
