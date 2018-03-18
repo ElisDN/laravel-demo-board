@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Router\AdvertsPath;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -9,11 +10,11 @@ class RouteServiceProvider extends ServiceProvider
 {
     protected $namespace = 'App\Http\Controllers';
 
-    public function boot()
+    public function boot(): void
     {
-        //
-
         parent::boot();
+
+        Route::model('adverts_path', AdvertsPath::class);
     }
 
     public function map()

@@ -20,6 +20,11 @@ class Region extends Model
 {
     protected $fillable = ['name', 'slug', 'parent_id'];
 
+    public function getPath(): string
+    {
+        return ($this->parent ? $this->parent->getPath() . '/' : '') . $this->slug;
+    }
+
     public function getAddress(): string
     {
         return ($this->parent ? $this->parent->getAddress() . ', ' : '') . $this->name;
