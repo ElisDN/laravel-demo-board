@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:manage-adverts-categories');
+    }
+
     public function index()
     {
         $categories = Category::defaultOrder()->withDepth()->get();

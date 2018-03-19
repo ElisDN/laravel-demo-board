@@ -10,6 +10,11 @@ use Illuminate\Validation\Rule;
 
 class AttributeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:manage-adverts-categories');
+    }
+
     public function create(Category $category)
     {
         $types = Attribute::typesList();
