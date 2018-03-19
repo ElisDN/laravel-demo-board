@@ -116,6 +116,13 @@ Breadcrumbs::register('cabinet.adverts.create.advert', function (Crumbs $crumbs,
     $crumbs->push($region ? $region->name : 'All', route('cabinet.adverts.create.advert', [$category, $region]));
 });
 
+// Favorites
+
+Breadcrumbs::register('cabinet.favorites.index', function (Crumbs $crumbs) {
+    $crumbs->parent('cabinet.home');
+    $crumbs->push('Adverts', route('cabinet.favorites.index'));
+});
+
 // Admin
 
 Breadcrumbs::register('admin.home', function (Crumbs $crumbs) {

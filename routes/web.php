@@ -30,6 +30,8 @@ Route::group([
 ], function () {
     Route::get('/show/{advert}', 'AdvertController@show')->name('show');
     Route::post('/show/{advert}/phone', 'AdvertController@phone')->name('phone');
+    Route::post('/show/{advert}/favorites', 'FavoriteController@add')->name('favorites');
+    Route::delete('/show/{advert}/favorites', 'FavoriteController@remove');
 
     Route::get('/{adverts_path?}', 'AdvertController@index')->name('index')->where('adverts_path', '.+');
 });
@@ -54,6 +56,9 @@ Route::group(
 
             Route::post('/phone/auth', 'PhoneController@auth')->name('phone.auth');
         });
+
+        Route::get('favorites', 'FavoriteController@index')->name('favorites.index');
+        Route::delete('favorites/{advert}', 'FavoriteController@remove')->name('favorites.remove');
 
         Route::group([
             'prefix' => 'adverts',
