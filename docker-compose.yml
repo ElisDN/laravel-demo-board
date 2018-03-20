@@ -20,11 +20,13 @@ services:
         links:
             - mysql
             - redis
+            - elasticsearch
         environment:
             - "DB_PORT=3306"
             - "DB_HOST=mysql"
             - "REDIS_PORT=6379"
             - "REDIS_HOST=redis"
+            - "ELASTICSEARCH_HOSTS=elasticsearch:9200"
     php-cli:
         build:
             context: ./
@@ -34,11 +36,13 @@ services:
         links:
             - mysql
             - redis
+            - elasticsearch
         environment:
             - "DB_PORT=3306"
             - "DB_HOST=mysql"
             - "REDIS_PORT=6379"
             - "REDIS_HOST=redis"
+            - "ELASTICSEARCH_HOSTS=elasticsearch:9200"
         tty: true
     mysql:
         image: mysql:5.7
@@ -61,3 +65,16 @@ services:
             - ./:/var/www
         working_dir: /var/www
         tty: true
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.2.2
+        environment:
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms128m -Xmx128m"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        volumes:
+            - ./storage/docker/elasticsearch:/usr/share/elasticsearch/data
+        ports:
+            - "9201:9200"
