@@ -93,7 +93,16 @@
 
             <p>{!! nl2br(e($advert->content)) !!}</p>
 
-            <hr/>
+            <table class="table table-bordered">
+                <tbody>
+                @foreach ($advert->category->allAttributes() as $attribute)
+                    <tr>
+                        <th>{{ $attribute->name }}</th>
+                        <td>{{ $advert->getValue($attribute->id) }}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
 
             <p>Address: {{ $advert->address }}</p>
 
