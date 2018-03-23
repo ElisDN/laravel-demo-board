@@ -13,6 +13,7 @@ class Kernel extends ConsoleKernel
 
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('banner:expire')->daily();
         $schedule->command('advert:expire')->hourly();
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\User;
+namespace App\Console\Commands\Advert;
 
 use App\Entity\Adverts\Advert\Advert;
 use App\UseCases\Adverts\AdvertService;

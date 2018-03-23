@@ -18,7 +18,7 @@ class AdvertIndexer
     public function clear(): void
     {
         $this->client->deleteByQuery([
-            'index' => 'app',
+            'index' => 'adverts',
             'type' => 'advert',
             'body' => [
                 'query' => [
@@ -38,7 +38,7 @@ class AdvertIndexer
         }
 
         $this->client->index([
-            'index' => 'app',
+            'index' => 'adverts',
             'type' => 'advert',
             'id' => $advert->id,
             'body' => [
@@ -52,7 +52,7 @@ class AdvertIndexer
                     [$advert->category->id],
                     $advert->category->ancestors()->pluck('id')->toArray()
                 ),
-                'regions' => $regions,
+                'regions' => $regions ?: [0],
                 'values' => array_map(function (Value $value) {
                     return [
                         'attribute' => $value->attribute_id,
@@ -67,7 +67,7 @@ class AdvertIndexer
     public function remove(Advert $advert): void
     {
         $this->client->delete([
-            'index' => 'app',
+            'index' => 'adverts',
             'type' => 'advert',
             'id' => $advert->id,
         ]);
