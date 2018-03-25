@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Auth;
 
-use App\Entity\User;
+use App\Entity\User\User;
 use Illuminate\Support\Str;
 use Tests\TestCase;
 

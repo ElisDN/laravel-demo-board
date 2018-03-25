@@ -4,7 +4,7 @@ namespace App\Entity\Banner;
 
 use App\Entity\Adverts\Category;
 use App\Entity\Region;
-use App\Entity\User;
+use App\Entity\User\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

@@ -3,7 +3,7 @@
 namespace App\UseCases\Adverts;
 
 use App\Entity\Adverts\Advert\Advert;
-use App\Entity\User;
+use App\Entity\User\User;
 
 class FavoriteService
 {

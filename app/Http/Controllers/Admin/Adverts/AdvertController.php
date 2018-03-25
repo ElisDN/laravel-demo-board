@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\Adverts;
 
 use App\Entity\Adverts\Advert\Advert;
-use App\Entity\User;
+use App\Entity\User\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Adverts\AttributesRequest;
 use App\Http\Requests\Adverts\EditRequest;

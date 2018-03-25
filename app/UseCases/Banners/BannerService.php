@@ -5,7 +5,7 @@ namespace App\UseCases\Banners;
 use App\Entity\Adverts\Category;
 use App\Entity\Banner\Banner;
 use App\Entity\Region;
-use App\Entity\User;
+use App\Entity\User\User;
 use App\Http\Requests\Banner\CreateRequest;
 use App\Http\Requests\Banner\EditRequest;
 use App\Http\Requests\Banner\FileRequest;

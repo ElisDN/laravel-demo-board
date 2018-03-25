@@ -5,7 +5,7 @@ use App\Entity\Adverts\Attribute;
 use App\Entity\Adverts\Category;
 use App\Entity\Banner\Banner;
 use App\Entity\Region;
-use App\Entity\User;
+use App\Entity\User\User;
 use App\Http\Router\AdvertsPath;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
 

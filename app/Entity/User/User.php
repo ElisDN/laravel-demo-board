@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\User;
 
 use App\Entity\Adverts\Advert\Advert;
 use Carbon\Carbon;
