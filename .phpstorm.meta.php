@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-03-26 12:02:05.
+    * Generated on 2018-03-26 14:34:33.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -44,6 +44,8 @@ namespace PHPSTORM_META {
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'App\Services\Banner\CostCalculator' => \App\Services\Banner\CostCalculator::class,
         'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'Elasticsearch\Client' => \Elasticsearch\Client::class,
@@ -187,6 +189,8 @@ namespace PHPSTORM_META {
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'App\Services\Banner\CostCalculator' => \App\Services\Banner\CostCalculator::class,
         'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'Elasticsearch\Client' => \Elasticsearch\Client::class,
@@ -330,6 +334,8 @@ namespace PHPSTORM_META {
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'App\Services\Banner\CostCalculator' => \App\Services\Banner\CostCalculator::class,
         'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'Elasticsearch\Client' => \Elasticsearch\Client::class,
@@ -473,6 +479,8 @@ namespace PHPSTORM_META {
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'App\Services\Banner\CostCalculator' => \App\Services\Banner\CostCalculator::class,
         'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'Elasticsearch\Client' => \Elasticsearch\Client::class,
@@ -616,6 +624,8 @@ namespace PHPSTORM_META {
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'App\Services\Banner\CostCalculator' => \App\Services\Banner\CostCalculator::class,
         'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'Elasticsearch\Client' => \Elasticsearch\Client::class,
@@ -759,6 +769,8 @@ namespace PHPSTORM_META {
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'App\Services\Banner\CostCalculator' => \App\Services\Banner\CostCalculator::class,
         'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'Elasticsearch\Client' => \Elasticsearch\Client::class,
@@ -902,6 +914,8 @@ namespace PHPSTORM_META {
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'App\Services\Banner\CostCalculator' => \App\Services\Banner\CostCalculator::class,
         'App\Services\Sms\SmsSender' => \App\Services\Sms\SmsRu::class,
         'Elasticsearch\Client' => \Elasticsearch\Client::class,
