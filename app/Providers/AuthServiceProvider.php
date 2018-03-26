@@ -17,7 +17,11 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->registerPolicies();
+        $this->registerPermissions();
+    }
 
+    private function registerPermissions(): void
+    {
         Gate::define('admin-panel', function (User $user) {
             return $user->isAdmin() || $user->isModerator();
         });
