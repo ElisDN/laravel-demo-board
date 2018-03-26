@@ -16,6 +16,17 @@ class RegisterController extends Controller
         $this->service = $service;
     }
 
+    /**
+     * @SWG\Post(
+     *     path="/register",
+     *     tags={"Profile"},
+     *     @SWG\Parameter(name="body", in="body", required=true, @SWG\Schema(ref="#/definitions/RegisterRequest")),
+     *     @SWG\Response(
+     *         response=201,
+     *         description="Success response",
+     *     )
+     * )
+     */
     public function register(RegisterRequest $request)
     {
         $this->service->register($request);

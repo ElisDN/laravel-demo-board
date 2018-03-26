@@ -18,11 +18,35 @@ class ProfileController extends Controller
         $this->service = $service;
     }
 
+    /**
+     * @SWG\Get(
+     *     path="/user",
+     *     tags={"Profile"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Success response",
+     *         @SWG\Schema(ref="#/definitions/Profile"),
+     *     ),
+     *     security={{"Bearer": {}, "OAuth2": {}}}
+     * )
+     */
     public function show(Request $request)
     {
         return new ProfileResource($request->user());
     }
 
+    /**
+     * @SWG\Put(
+     *     path="/user",
+     *     tags={"Profile"},
+     *     @SWG\Parameter(name="body", in="body", required=true, @SWG\Schema(ref="#/definitions/ProfileEditRequest")),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Success response",
+     *     ),
+     *     security={{"Bearer": {}, "OAuth2": {}}}
+     * )
+     */
     public function update(ProfileEditRequest $request)
     {
         $this->service->edit($request->user()->id, $request);

@@ -12,9 +12,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
  * @property int $id
- * @property int $user_id
- * @property int $category_id
- * @property int $region_id
  * @property string $title
  * @property int $price
  * @property string $address
@@ -50,3 +47,27 @@ class AdvertListResource extends JsonResource
         ];
     }
 }
+
+/**
+ * @SWG\Definition(
+ *     definition="AdvertList",
+ *     type="object",
+ *     @SWG\Property(property="id", type="integer"),
+ *     @SWG\Property(property="user", type="object",
+ *         @SWG\Property(property="name", type="string"),
+ *         @SWG\Property(property="phone", type="string"),
+ *     ),
+ *     @SWG\Property(property="category", type="object",
+ *         @SWG\Property(property="id", type="integer"),
+ *         @SWG\Property(property="name", type="string"),
+ *     ),
+ *     @SWG\Property(property="region", type="object",
+ *         @SWG\Property(property="id", type="integer"),
+ *         @SWG\Property(property="name", type="string"),
+ *     ),
+ *     @SWG\Property(property="title", type="string"),
+ *     @SWG\Property(property="price", type="integer"),
+ *     @SWG\Property(property="date", type="date"),
+ *     @SWG\Property(property="photo", type="string"),
+ * )
+ */
