@@ -49,7 +49,7 @@
 
         <div class="form-group">
             <label for="content" class="col-form-label">Content</label>
-            <textarea id="content" class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" rows="10" required>{{ old('content', $page->content) }}</textarea>
+            <textarea id="content" class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }} summernote" name="content" rows="10" required>{{ old('content', $page->content) }}</textarea>
             @if ($errors->has('content'))
                 <span class="invalid-feedback"><strong>{{ $errors->first('content') }}</strong></span>
             @endif

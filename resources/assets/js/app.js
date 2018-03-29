@@ -62,3 +62,9 @@ $(document).on('click', '.location-button', function () {
         alert('Unable to detect your location.');
     }
 });
+
+$(document).ready(function() {
+    $('.summernote').summernote({
+        height: 300
+    });
+});
