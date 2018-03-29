@@ -12,6 +12,9 @@
     @can ('manage-adverts-categories')
         <li class="nav-item"><a class="nav-link{{ $page === 'adverts_categories' ? ' active' : '' }}" href="{{ route('admin.adverts.categories.index') }}">Categories</a></li>
     @endcan
+    @can ('manage-pages')
+        <li class="nav-item"><a class="nav-link{{ $page === 'pages' ? ' active' : '' }}" href="{{ route('admin.pages.index') }}">Pages</a></li>
+    @endcan
     @can ('manage-users')
         <li class="nav-item"><a class="nav-link{{ $page === 'users' ? ' active' : '' }}" href="{{ route('admin.users.index') }}">Users</a></li>
     @endcan

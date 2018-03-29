@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Adverts</title>
+    @yield('meta')
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css', 'build') }}" rel="stylesheet">

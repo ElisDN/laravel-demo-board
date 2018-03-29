@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Router\AdvertsPath;
+use App\Http\Router\PagePath;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -15,6 +16,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::model('adverts_path', AdvertsPath::class);
+        Route::model('page_path', PagePath::class);
     }
 
     public function map()
