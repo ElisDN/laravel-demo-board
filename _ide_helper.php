@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.7 on 2018-03-26 14:34:33.
+ * Generated for Laravel 5.6.7 on 2018-03-29 18:23:22.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -13244,6 +13244,38 @@ namespace Laravel\Socialite\Facades {
  
 }
 
+namespace Mews\Purifier\Facades { 
+
+    class Purifier {
+        
+        /**
+         * 
+         *
+         * @param $dirty
+         * @param null $config
+         * @return mixed 
+         * @static 
+         */ 
+        public static function clean($dirty, $config = null)
+        {
+            return \Mews\Purifier\Purifier::clean($dirty, $config);
+        }
+        
+        /**
+         * Get HTMLPurifier instance.
+         *
+         * @return \HTMLPurifier 
+         * @static 
+         */ 
+        public static function getInstance()
+        {
+            return \Mews\Purifier\Purifier::getInstance();
+        }
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -15419,6 +15451,8 @@ namespace  {
     class Breadcrumbs extends \DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs {}
 
     class Socialite extends \Laravel\Socialite\Facades\Socialite {}
+
+    class Purifier extends \Mews\Purifier\Facades\Purifier {}
  
 }
 
