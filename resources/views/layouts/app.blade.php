@@ -86,5 +86,6 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js', 'build') }}"></script>
+    @yield('scripts')
 </body>
 </html>
