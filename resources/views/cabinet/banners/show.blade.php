@@ -101,7 +101,7 @@
 
     <div class="card">
         <div class="card-body">
-            <img src="{{ asset('storage/' . $banner->file) }}" />
+            <img src="{{ Storage::disk('public')->url($banner->file) }}" />
         </div>
     </div>
 @endsection

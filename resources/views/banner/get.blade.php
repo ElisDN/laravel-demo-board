@@ -2,5 +2,5 @@
     <img
         width="{{ $banner->getWidth() }}"
         height="{{ $banner->getHeight() }}"
-        src="{{ asset('/storage/' . $banner->file) }}">
+        src="{{ Storage::disk('public')->url($banner->file) }}">
 </a>
