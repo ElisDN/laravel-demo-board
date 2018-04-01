@@ -25,6 +25,18 @@ assets-watch:
 queue:
 	docker-compose exec php-cli php artisan queue:work
 
+horizon:
+	docker-compose exec php-cli php artisan horizon
+
+horizon-pause:
+	docker-compose exec php-cli php artisan horizon:pause
+
+horizon-continue:
+	docker-compose exec php-cli php artisan horizon:continue
+
+horizon-terminate:
+	docker-compose exec php-cli php artisan horizon:terminate
+
 memory:
 	sudo sysctl -w vm.max_map_count=262144
 
