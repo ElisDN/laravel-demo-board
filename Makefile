@@ -22,6 +22,9 @@ assets-dev:
 assets-watch:
 	docker-compose exec node yarn run watch
 
+queue:
+	docker-compose exec php-cli php artisan queue:work
+
 memory:
 	sudo sysctl -w vm.max_map_count=262144
 
