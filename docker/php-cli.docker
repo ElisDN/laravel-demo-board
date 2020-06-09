@@ -1,6 +1,10 @@
 FROM php:7.1-cli
 
-RUN apt-get update && apt-get install -y libmcrypt-dev mariadb-client \
+RUN apt-get update && apt-get install -y libmcrypt-dev mariadb-client wget unzip \
     && docker-php-ext-install mcrypt pdo_mysql
+
+RUN wget https://getcomposer.org/installer -O - -q | php -- --version=1.9.1 --install-dir=/bin --filename=composer --quiet
+
+ENV COMPOSER_ALLOW_SUPERUSER 1
 
 WORKDIR /var/www
